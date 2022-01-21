@@ -1,0 +1,31 @@
+<div class="background fit_content">  
+  <div class="container adjust_top">
+    <div class="row">
+      <div class="col-2">
+        <table class="table table-striped table-dark">
+          <thead>
+            <tr>
+              <th scope="col">League</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let leagueItem of LeagueList" >
+              <td><button (click)="onPress(leagueItem.name)" routerLink="leagues" class="btn btn-success">{{leagueItem.name}}</button></td>
+        
+            </tr>
+          </tbody>
+        </table>
+        </div>
+      <div class="col-10">
+        <div *ngIf="displayfalse">
+          <app-leagues></app-leagues>
+
+        </div>
+        <div *ngIf="display">
+          <app-leagues [ClubList]="ClubList"></app-leagues>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
